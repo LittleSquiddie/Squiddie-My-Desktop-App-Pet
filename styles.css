@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+  #pet-container {
+       position: relative;
+       width: 128px;
+       height: 128px;
+       cursor: grab;
+       margin-top: 30px;  /* NEW: Adds 30px of space above the container, keeping overlays inside the 250x250 window */
+     }
+     
+#pet-container:active {
+  cursor: grabbing;
+}
+
+#squiddie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+ #heart-overlay, #message-overlay, #sleep-overlay {
+       position: absolute;
+       top: -10px;  /* CHANGED: Reduced from -20px to -10px to make them less likely to clip, while keeping the effect */
+       left: 50%;
+       transform: translateX(-50%);
+       font-size: 24px;
+       opacity: 0;
+       transition: opacity 0.5s, transform 0.5s;
+       pointer-events: none;
+     }
+
+#message-overlay {
+       background: rgba(255, 255, 255, 0.8);
+       padding: 5px;
+       border-radius: 5px;
+       font-size: 12px;
+     }
+
+#controls {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
